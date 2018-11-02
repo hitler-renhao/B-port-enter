@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>商家入驻</title>
+	<title>验光师入住</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -99,42 +99,62 @@
 		<!--顶部结束-->
 		<div class="notice">
 			<a href="./notice.html">
-				<span>入住说明</span><i class="layui-icon layui-icon-help"></i>
+					<span>入住说明</span><i class="layui-icon layui-icon-help"></i>
 			</a>
 		</div>
-		<!--店铺入住-->
-		<form class="showbox" id="form1">
-			<i class="fl" style="line-height:1rem;color: red;">*</i>
+		<!--验光师入住-->
+		<form id="form2">
 			<div class="ipt name">
-				<p>店铺名称 :</p>
-				<input type="text" id="username" placeholder="请输入店铺名称" />
+				<p>您的姓名 :</p>
+				<input id="name" type="text" placeholder="请输入您的姓名" />
 			</div>
-			<i class="fl" style="line-height:1rem;color: red;">*</i>
 			<div class="ipt city">
-				<p>店铺地区 :</p>
+				<p>服务地区 :</p>
 				<input id="city" type="text" readonly="" placeholder="请选择地区" />
-				<input id="value2" type="hidden" />
+				<input id="value" type="hidden" />
 			</div>
-			<i class="fl" style="line-height:1rem;color: red;">*</i>
-			<div class="ipt phone">
+			<div class="ipt addr">
 				<p>详细地址 :</p>
-				<input type="text" id="userphone" placeholder="请输入详细地址" />
+				<input id="addr" type="text" placeholder="请输入详细地址" />
 			</div>
-			<i class="fl" style="line-height:1rem;color: red;">*</i>
 			<div class="ipt phone">
-				<p>店内电话 :</p>
-				<input type="text" id="userphone" placeholder="请输入店内电话" />
-			</div>
-			<i style="line-height:1rem;color: red;position: absolute;">*</i>
-			<div class="ipt time main">
-				<p>营业时间 :</p>
-				<!-- <input id="beginTime" type="text" placeholder="请选择上门时间" value="" /> -->
-				<input class="time" type="text" value="14:30" onchange="console.log('Time changed')" placeholder="请选择营业时间" />
-				<span>至</span>
-				<input class="time1" type="text" value="14:30" onchange="console.log('Time changed')" placeholder="请选择营业时间" />
+				<p>您的电话 :</p>
+				<input id="phone" type="text" placeholder="请输入您的电话" />
+      </div>
+      <div class="ipt time main">
+          <p>工作时间 :</p>
+          <!-- <input id="beginTime" type="text" placeholder="请选择上门时间" value="" /> -->
+          <input class="time" type="text" value="14:30" onchange="console.log('Time changed')" placeholder="请选择营业时间" />
+          <span>至</span>
+          <input class="time1" type="text" value="14:30" onchange="console.log('Time changed')" placeholder="请选择营业时间" />
+        </div>
+			<div class="shop-pic">
+				<p>身份证</p>
+				<ul>
+					<li class="fl">
+						<div class="layui-upload face">
+							<div class="layui-upload-img" id="faces">
+								<p>+</p>
+							</div>
+							<input class="upload-file" type="file" accept="undefined" name="file">
+							<p class="idcard-text">头像面</p>
+						</div>
+
+					</li>
+					<li class="shop-pic-text">
+						<div class="layui-upload face" style="margin-left:1rem;">
+							<div class="layui-upload-img" id="faces">
+								<p>+</p>
+							</div>
+							<input class="upload-file" type="file" accept="undefined" name="file">
+							<p class="idcard-text">国徽面</p>
+						</div>
+
+					</li>
+				</ul>
 			</div>
 			<div class="shop-pic">
-				<p>营业执照</p>
+				<p>验光师资格证</p>
 				<ul>
 					<li class="fl">
 						<div class="layui-upload face">
@@ -149,16 +169,24 @@
 					</li>
 				</ul>
 			</div>
-
-			<!--下一步-->
 			<div class="subbox">
-				<a href="javascript:;" class="submit shop-next">
+				<a href="javascript:;" class="submit optometrist-next">
 					<input type="button" value="下一步" onfocus="this.blur();" id="sm" />
 				</a>
 			</div>
 		</form>
-		<!--商户入住结束-->
 	</div>
+
+
+
+
+
+
+
+
+
+
+
 	<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nlqmwS4x5dr1H1Q1wnHfiQ6BSOHZU3j6"></script> -->
 	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../js/common/iscroll.js"></script>
@@ -178,23 +206,6 @@
 			$('.time').clockTimePicker({});
 			$('.time1').clockTimePicker({});
 		});
-	</script>
-	<script>
-		var abtn = document.getElementById('aBtn');
-		var aLi = abtn.getElementsByTagName('li');
-		var content = document.getElementById('container');
-		var aDiv = content.getElementsByTagName('form');
-		for (var i = 0; i < aLi.length; i++) {
-			aLi[i].index = i;
-			aLi[i].onclick = function () {
-				for (var i = 0; i < aLi.length; i++) {
-					aLi[i].className = '';
-					aDiv[i].className = '';
-				}
-				this.className = 'active';
-				aDiv[this.index].className = 'showbox';
-			}
-		}
 	</script>
 </body>
 

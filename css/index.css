@@ -8,6 +8,13 @@ html {
 	background-color: #fc9635;
 }
 
+.notice {
+	border: 1px solid #414141;
+	margin: 0 -0.25rem;
+	line-height: .6rem;
+	text-align: right;
+}
+
 form {
 	width: 100%;
 	height: auto;
@@ -17,7 +24,7 @@ form {
 }
 
 form .ipt {
-	width: 7.02rem;
+	width: 6.5rem;
 	height: 0.9rem;
 	border: 1px solid #dedede;
 	border-radius: 0.1rem;
@@ -46,7 +53,7 @@ form input[type=text] {
 	color: #727272;
 	border-radius: 0.2rem;
 	text-align: right;
-	padding-right: 0.54rem;
+	padding-right: .2rem;
 	float: right;
 }
 
@@ -523,9 +530,6 @@ form .ipt img {
 .clear{
 	clear:both;
 }
-#container form {
-	display: none;
-}
 
 #container .showbox {
 	display: block;
@@ -610,4 +614,16 @@ MARGIN-LEFT: auto;width: 80%;;height: 240px;background: #FFFFFF;z-index:9999999;
 	top: 0;
 	left: 0;
 	opacity: 0;
+}
+
+.main .time,
+.main .time1 {
+	width: 2rem;
+}
+
+.main span {
+	position: absolute;
+	z-index: 999;
+	top: 0.2rem;
+	color: #999;
 }
