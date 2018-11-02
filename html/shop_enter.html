@@ -16,8 +16,6 @@
 	<link rel="stylesheet" href="../css/index.css" />
 	<link rel="stylesheet" href="http://wx.bjysjglasses.com/static/wxshop/css/layer.css">
 	<link rel="stylesheet" href="../css/common/layui.css">
-
-
 </head>
 <style type="text/css">
 	.timeb {
@@ -67,6 +65,28 @@
 	.serive9 {
 		margin-top: 2rem !important;
 	}
+
+	h1 {
+		font-size: 20px;
+		margin-bottom: 3px;
+	}
+
+	h3 {
+		font-size: 13px;
+		margin-top: 0px;
+	}
+
+	.main {
+		text-align: center;
+	}
+
+	.time {
+		display: inline-block;
+		/* font-size: 26px; */
+		/* padding: 5px; */
+		text-align: center;
+		/* width: 86px; */
+	}
 </style>
 
 <body>
@@ -100,9 +120,10 @@
 				<p>店内电话 :</p>
 				<input type="text" id="userphone" placeholder="请输入店内电话" />
 			</div>
-			<div class="ipt time">
+			<div class="ipt time main">
 				<p>营业时间 :</p>
-				<input id="beginTime" type="text" placeholder="请选择上门时间" value="" />
+				<!-- <input id="beginTime" type="text" placeholder="请选择上门时间" value="" /> -->
+				<input class="time" type="text" value="14:30" onchange="console.log('Time changed')" placeholder="请选择营业时间" />
 			</div>
 			<div class="shop-pic">
 				<p>营业执照</p>
@@ -112,8 +133,7 @@
 							<div class="layui-upload-img" id="faces">
 								<p>+</p>
 							</div>
-							<input class="upload-file" type="file"
-							 accept="undefined" name="file">
+							<input class="upload-file" type="file" accept="undefined" name="file">
 						</div>
 					</li>
 					<li class="shop-pic-text">
@@ -160,22 +180,20 @@
 							<div class="layui-upload-img" id="faces">
 								<p>+</p>
 							</div>
-							<input class="upload-file" type="file"
-							 accept="undefined" name="file">
-							 <p class="idcard-text">头像面</p>
+							<input class="upload-file" type="file" accept="undefined" name="file">
+							<p class="idcard-text">头像面</p>
 						</div>
-						
+
 					</li>
 					<li class="shop-pic-text">
 						<div class="layui-upload face" style="margin-left:1rem;">
 							<div class="layui-upload-img" id="faces">
 								<p>+</p>
 							</div>
-							<input class="upload-file" type="file"
-							 accept="undefined" name="file">
-							 <p class="idcard-text">国徽面</p>
+							<input class="upload-file" type="file" accept="undefined" name="file">
+							<p class="idcard-text">国徽面</p>
 						</div>
-						
+
 					</li>
 				</ul>
 			</div>
@@ -187,8 +205,7 @@
 							<div class="layui-upload-img" id="faces">
 								<p>+</p>
 							</div>
-							<input class="upload-file" type="file"
-							 accept="undefined" name="file">
+							<input class="upload-file" type="file" accept="undefined" name="file">
 						</div>
 					</li>
 					<li class="shop-pic-text">
@@ -225,8 +242,14 @@
 	<script type="text/javascript" src="../js/common/layer.js"></script>
 	<script type="text/javascript" src="../js/common/layui.js"></script>
 	<script type="text/javascript" src="../js/alljs/index.js"></script>
+	<script src="../js/common/jquery-clock-timepicker.min.js"></script>
 
 	<!-- tab栏切换选择 -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.time').clockTimePicker({});
+		});
+	</script>
 	<script>
 		var abtn = document.getElementById('aBtn');
 		var aLi = abtn.getElementsByTagName('li');

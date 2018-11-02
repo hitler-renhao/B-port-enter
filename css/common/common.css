@@ -16,7 +16,7 @@ button, input[type=button], input[type=number], input[type=search], input[type=s
 ::-moz-placeholder { color: #999; }
 :-ms-input-placeholder { color: #999; }
 .flex {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}
-#container { width: 7.5rem;color: #333; }
+/* #container { width: 7.5rem;color: #333; } */
 body {
 	background: #fff;
 }
@@ -26,4 +26,25 @@ body {
 
 .fr {
 	float: right;
+}
+
+/* 按钮 */
+.optometrist-next {
+  display: block;
+  width: 3rem;
+  height: .8rem;
+  margin: .5rem auto;
+}
+.optometrist-next input {
+  width: 3rem;
+  height: .8rem;
+  background-color: #169BD5;
+  border: none;
+  border-radius: .1rem;
+  color: #ffffff;
+}
+
+#container {
+  margin-top: 1rem;
+  padding: 0 .25rem;
 }

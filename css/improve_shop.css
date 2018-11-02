@@ -1,16 +1,13 @@
 html {
   font-size: 100px;
 }
-
-.shop-pic {
-	height: 2.8rem;
+#container {
   padding: 0 0.25rem;
-  margin-top: 1rem;
 }
-.shop-pic > p {
-	font-size: 0.28rem;
+.introduce-text {
+  line-height: 0.8rem;
 }
-#faces {
+.layui-upload-img {
 	border: 1px dashed #000;
 	width: 2.5rem;
 	height: 1.5rem;
@@ -40,4 +37,80 @@ html {
 	top: 0;
 	left: 0;
 	opacity: 0;
+}
+.upload-pic #faces {
+  width: 2rem;
+}
+table {
+  margin-top: 0.5rem;
+}
+tr td:nth-child(n + 2) {
+  padding-left: 0.38rem;
+}
+
+/* 店员 */
+.straff-info {
+  position: relative;
+  border: 1px solid #000;
+  padding: .2rem;
+  margin-top: .2rem;
+}
+.upload-staff-pic,
+.upload-staff-pic .layui-upload-img,
+.upload-staff-pic .layui-upload-img input {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+.layui-upload-img#faces .staff-header {
+  line-height: 1rem;
+  font-size: .5rem;
+}
+.input-optometrist {
+  margin: .15rem;
+}
+.staff-introduce {
+  width: 80%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: .6rem;
+}
+
+/* 删除按钮 */
+.layui-icon-close-fill {
+  position: absolute;
+  top: -0.26rem;
+  right: -0.26rem;
+  font-size: 0.5rem;
+  color: red;
+}
+
+/* 新增验光师 */
+.new-optometrist {
+  width: 100%;
+  height: .8rem;
+  background-color: #ccc;
+  margin-top: .2rem;
+}
+.new-optometrist p {
+  font-size: .4rem;
+  text-align: center;
+  line-height: .8rem;
+}
+
+/* 按钮 */
+.optometrist-next {
+  display: block;
+  width: 3rem;
+  height: .8rem;
+  margin: .5rem auto;
+}
+.optometrist-next input {
+  width: 3rem;
+  height: .8rem;
+  background-color: #169BD5;
+  border: none;
+  border-radius: .1rem;
+  color: #ffffff;
 }
