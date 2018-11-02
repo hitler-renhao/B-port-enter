@@ -1,0 +1,43 @@
+html {
+  font-size: 100px;
+}
+
+.shop-pic {
+	height: 2.8rem;
+  padding: 0 0.25rem;
+  margin-top: 1rem;
+}
+.shop-pic > p {
+	font-size: 0.28rem;
+}
+#faces {
+	border: 1px dashed #000;
+	width: 2.5rem;
+	height: 1.5rem;
+}
+#faces p {
+	text-align: center;
+	line-height: 1.5rem;
+	font-size: 0.7rem;
+}
+.shop-pic-text {
+	width: 3.5rem;
+	position: absolute;
+	right: 0.5rem;
+}
+
+.idcard-text {
+	text-align: center;
+	line-height: 0.5rem;
+}
+.face {
+	position: relative;
+}
+.upload-file {
+	width: 2.5rem;
+	height: 1.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
