@@ -13,9 +13,9 @@
 	<link rel="stylesheet" type="text/css" href="http://wx.bjysjglasses.com/static/wxshop/css/LArea.min.css">
 	<link rel="stylesheet" type="text/css" href="http://wx.bjysjglasses.com/static/wxshop/css/zepto.mtimer.css">
 	<link rel="stylesheet" href="http://wx.bjysjglasses.com/static/wxshop/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/index.css" />
 	<link rel="stylesheet" href="http://wx.bjysjglasses.com/static/wxshop/css/layer.css">
 	<link rel="stylesheet" href="../css/common/layui.css">
-	<link rel="stylesheet" href="../css/index.css" />
 </head>
 <style type="text/css">
 	.timeb {
@@ -107,7 +107,7 @@
 			<i class="fl" style="line-height:1rem;color: red;">*</i>
 			<div class="ipt name">
 				<p>店铺名称 :</p>
-				<input type="text" id="shopName" placeholder="请输入店铺名称" />
+				<input type="text" id="username" placeholder="请输入店铺名称" />
 			</div>
 			<i class="fl" style="line-height:1rem;color: red;">*</i>
 			<div class="ipt city">
@@ -118,46 +118,32 @@
 			<i class="fl" style="line-height:1rem;color: red;">*</i>
 			<div class="ipt phone">
 				<p>详细地址 :</p>
-				<input type="text" id="shopAddress" placeholder="请输入详细地址" />
+				<input type="text" id="userphone" placeholder="请输入详细地址" />
 			</div>
 			<i class="fl" style="line-height:1rem;color: red;">*</i>
 			<div class="ipt phone">
 				<p>店内电话 :</p>
-				<input type="text" id="shopPhone" placeholder="请输入店内电话" />
+				<input type="text" id="userphone" placeholder="请输入店内电话" />
 			</div>
 			<i style="line-height:1rem;color: red;position: absolute;">*</i>
 			<div class="ipt time main">
 				<p>营业时间 :</p>
 				<!-- <input id="beginTime" type="text" placeholder="请选择上门时间" value="" /> -->
-				<input id="startTime" type="text" onchange="console.log('Time changed')" placeholder="开始" />
+				<input class="time" type="text" value="14:30" onchange="console.log('Time changed')" placeholder="请选择营业时间" />
 				<span>至</span>
-				<input id="endTime" type="text" onchange="console.log('Time changed')" placeholder="结束" />
+				<input class="time1" type="text" value="14:30" onchange="console.log('Time changed')" placeholder="请选择营业时间" />
 			</div>
 			<div class="shop-pic">
 				<p>营业执照</p>
 				<ul>
-					<!-- <li class="fl layui-upload">
+					<li class="fl">
 						<div class="layui-upload face">
 							<div class="layui-upload-img" id="faces">
 								<p>+</p>
 							</div>
-							<img src="" alt="" class="shop-img display" id="img">
-							<input class="upload-file" type="file" accept="undefined" name="file" id="upimg" onchange="upLoad()">
-						</div>
-					</li> -->
-
-					<li class="layui-upload fl">
-						<input type="button" class="layui-btn" id="test1">
-						<p class="btn-add">+</p>
-						<div class="layui-upload-list display">
-							<img class="layui-upload-img" id="demo1">
+							<input class="upload-file" type="file" accept="undefined" name="file">
 						</div>
 					</li>
-
-
-					
-
-
 					<li class="shop-pic-text">
 						<p>请上传完整、清晰的营业执照图片，营业执照中的公司名称需与填写的的店铺名称一致！</p>
 					</li>
@@ -167,7 +153,7 @@
 			<!--下一步-->
 			<div class="subbox">
 				<a href="javascript:;" class="submit shop-next">
-					<input type="button" value="下一步" id="next" />
+					<input type="button" value="下一步" onfocus="this.blur();" id="sm" />
 				</a>
 			</div>
 		</form>
@@ -176,77 +162,40 @@
 	<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nlqmwS4x5dr1H1Q1wnHfiQ6BSOHZU3j6"></script> -->
 	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../js/common/iscroll.js"></script>
+	<script type="text/javascript" src="../js/common/jquery.cookie.js"></script>
 	<script type="text/javascript" src="../js/common/common.js"></script>
 	<script type="text/javascript" src="../js/common/LArea.min.js"></script>
 	<script type="text/javascript" src="../js/common/LAreaData2.js"></script>
+	<!-- <script type="text/javascript" src="../js/alljs/right-serive.js"></script> -->
 	<script type="text/javascript" src="../js/common/layer.js"></script>
 	<script type="text/javascript" src="../js/common/layui.js"></script>
 	<script type="text/javascript" src="../js/alljs/index.js"></script>
-	<script type="text/javascript" src="../layui/layui.js"></script>
 	<script src="../js/common/jquery-clock-timepicker.js"></script>
 
-	<!-- 时间选择 -->
+	<!-- tab栏切换选择 -->
 	<script type="text/javascript">
 		$(document).ready(function () {
-			$('#startTime').clockTimePicker({});
-			$('#endTime').clockTimePicker({});
+			$('.time').clockTimePicker({});
+			$('.time1').clockTimePicker({});
 		});
 	</script>
-
 	<script>
-		function upLoad() {
-			var fileInput = document.getElementById("upimg");
-			var file = fileInput.files[0];
-			//创建读取文件的对象
-			var reader = new FileReader();
-			//创建文件读取相关的变量
-			var imgFile;
-			//为文件读取成功设置事件
-			reader.onload = function (e) {
-				// alert('文件读取完成');
-				imgFile = e.target.result;
-				console.log(imgFile);
-				$("#img").attr('src', imgFile);
-			};
-
-			//正式读取文件
-			reader.readAsDataURL(file);
+		var abtn = document.getElementById('aBtn');
+		var aLi = abtn.getElementsByTagName('li');
+		var content = document.getElementById('container');
+		var aDiv = content.getElementsByTagName('form');
+		for (var i = 0; i < aLi.length; i++) {
+			aLi[i].index = i;
+			aLi[i].onclick = function () {
+				for (var i = 0; i < aLi.length; i++) {
+					aLi[i].className = '';
+					aDiv[i].className = '';
+				}
+				this.className = 'active';
+				aDiv[this.index].className = 'showbox';
+			}
 		}
 	</script>
-	<script>
-			layui.use('upload', function(){
-				var $ = layui.jquery
-				,upload = layui.upload;
-				
-				//普通图片上传
-				var uploadInst = upload.render({
-					elem: '#test1,.layui-upload-list'
-					,url: '/upload/'
-					,before: function(obj){
-						$('.layui-upload-list').removeClass('display')
-						//预读本地文件示例，不支持ie8
-						obj.preview(function(index, file, result){
-							$('#demo1').attr('src', result); //图片链接（base64）
-						});
-					}
-					,done: function(res){
-						//如果上传失败
-						if(res.code > 0){
-							return layer.msg('上传失败');
-						}
-						//上传成功
-					}
-					,error: function(){
-						//演示失败状态，并实现重传
-						var demoText = $('#demoText');
-						demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
-						demoText.find('.demo-reload').on('click', function(){
-							uploadInst.upload();
-						});
-					}
-				}); 
-			});
-		</script>
 </body>
 
 </html>

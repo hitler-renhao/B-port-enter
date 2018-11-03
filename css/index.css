@@ -616,8 +616,8 @@ MARGIN-LEFT: auto;width: 80%;;height: 240px;background: #FFFFFF;z-index:9999999;
 	opacity: 0;
 }
 
-.main #startTime,
-.main #endTime {
+.main .time,
+.main .time1 {
 	width: 2rem;
 }
 
@@ -626,38 +626,4 @@ MARGIN-LEFT: auto;width: 80%;;height: 240px;background: #FFFFFF;z-index:9999999;
 	z-index: 999;
 	top: 0.2rem;
 	color: #999;
-	left: 4.5rem;
-}
-
-.shop-img {
-	width: 2.5rem;
-	height: 1.5rem;
-}
-.layui-upload {
-	position: relative;
-}
-#test1 {
-	width: 2.5rem;
-	height: 1.5rem;
-	background-color: #fff;
-	border: 1px dashed #000;
-}
-.btn-add {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.layui-upload-list {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 2.5rem;
-	height: 1.5rem;
-	margin: 0;
-}
-#demo1 {
-	width: 2.5rem;
-	height: 1.5rem;
 }
