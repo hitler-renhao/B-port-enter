@@ -48,3 +48,7 @@ body {
   margin-top: 0.87rem;
   padding: 0 .25rem;
 }
+
+.display {
+  display: none;
+}
