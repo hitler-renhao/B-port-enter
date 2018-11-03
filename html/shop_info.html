@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>门店详情(店家)</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../css/common/header.css" />
+	<link rel="stylesheet" href="../css/shop_detail.css" />
+	<script type="text/javascript" src="../js/common/common.js"></script>
+
+  <style>
+    .edit-info {
+      position: absolute;
+      top: 0;
+      right: .2rem;
+      font-size: 12px;
+      color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+	<header>
+		<a href="javascript:;" onclick="javascript:history.back(-1);"><img class="back" src="../images/jt_zuo.png" /></a>
+		<p class="title">
+      <span style="text-align:center;">门店详情(店家)</span>
+      <a href="./shop_enter.html" class="edit-info">修改资料</a>
+      </p>
+	</header>
+	<div id="container">
+		<div class="toptop">
+			<div class="topbox">
+				<!-- 头部 -->
+
+			</div>
+		</div>
+		<!--验光师列表-->
+		<img src="" class="user" alt="门店照片" />
+		<div id="wrapper">
+			<div id="scroller">
+				<ul class="content" id="popular">
+					<li>
+
+						<span class="opbox">
+							<span class="namebox">
+								<p class="name">不二家的店</p>
+								<span class="star">
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+								</span>
+								<!--<a href='javascript:;'>已服务1421人</a>-->
+								<i>已服务1421人</i>
+							</span>
+							<!--<span class="namebox">
+									<p class="title">评价：</p>
+									<span class="star">
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+									</span>
+							</span>-->
+							<p class="evaluate">营业时间：8:30-20:00</p>
+							<p class="evaluate">Tel:18810209641</p>
+							<span class="renz">
+								<p>地址：北京朝阳望京博泰大厦</p>
+								<p>地图查看</p>
+							</span>
+						</span>
+					</li>
+				</ul>
+			</div>
+			<div class="con" id="container">
+				<!--切换按钮-->
+				<ul class="content_top" id="">
+					<li>店铺介绍</li>
+				</ul>
+				<article class="showbox" id="shopdel">
+					<img src="" alt="店铺介绍" class="shopdel" />
+					<p class="shop">店内设施介绍店内设施介绍店内设施介绍店内设施介绍店内设施介绍店内设施介绍店内设施介绍店内设施介绍</p>
+					<h4>店内验光师:</h4>
+					<div class="comment_list">
+						<dl>
+							<dt><img src="../images/touxiang.png"></dt>
+							<dd>
+								<p>啦啦</p>
+								<p>楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt><img src="../images/touxiang.png"></dt>
+							<dd>
+								<p>验光师达令~</p>
+								<p>楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！</p>
+							</dd>
+						</dl>
+					</div>
+				</article>
+			</div>
+
+			<!--<div class="bottom">
+					<div id="addCar" class="btn fl">写评价</div>					
+					<div id="payNow" class="btn fr">立即咨询</div>
+				</div>-->
+			<!--<a href="#evaluation">跳转到用户评价</a>
+				<a href="#shopdel">跳转到店铺介绍</a>-->
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+	<script src="../js/alljs/shop_detail.js"></script>
+	<!--<script type="text/javascript" src="../js/jquery.cookie.js" ></script>
+		<script type="text/javascript" src="../js/iscroll.js" ></script>-->
+	<script>
+		//			var abtn = document.getElementById('aBtn');
+		//			var aLi = abtn.getElementsByTagName('li');
+		//			var content = document.getElementById('container');
+		//			var aDiv = content.getElementsByTagName('text');
+		//			for(var i = 0; i < aLi.length; i++) {
+		//				aLi[i].index = i;
+		//				aLi[i].onclick = function() {
+		//					for(var i = 0; i < aLi.length; i++) {
+		//						aLi[i].className = '';
+		//						aDiv[i].className = '';
+		//					}
+		//					this.className = 'active';
+		//					aDiv[this.index].className = 'showbox';
+		//				}
+		//			}
+	</script>
+</body>
+
+</html>
