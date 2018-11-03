@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>完善验光师资料 </title>
+		<title>验光师评价</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="stylesheet" href="../css/common/common.css" />
@@ -19,18 +19,37 @@
 				<!-- 头部 -->
 				<header>
 					<a href="javascript:;" onclick="javascript:history.back(-1);"><img class="back" src="../images/jt_zuo.png" /></a>
-					<p class="title">完善资料</p>
+					<p class="title">填写评价</p>
 				</header>
 			</div>
 			<!--内容-->
 			<form>
-				<ul class="content">					
+				<ul class="content">
 					<li>
-						<label><i>*</i>个人介绍:</label>
-						<textarea rows="5" placeholder="您可以详细的点评您的体验及建议"></textarea>
+						<label><i>*</i>验光师服务态度:</label>
+						<span id="rating1">
+							<i class="rating-item" title="很不好"></i>
+							<i class="rating-item" title="不好"></i>
+							<i class="rating-item" title="一般"></i>
+							<i class="rating-item" title="好"></i>
+							<i class="rating-item" title="很好"></i>														
+						</span>
 					</li>
 					<li>
-						<label><i>*</i>特长说明:</label>
+						<label><i>*</i>验光师专业技术:</label>
+						<span id="rating2">
+							<i class="rating-item" title="很不好"></i>
+							<i class="rating-item" title="不好"></i>
+							<i class="rating-item" title="一般"></i>
+							<i class="rating-item" title="好"></i>
+							<i class="rating-item" title="很好"></i>														
+						</span>
+					</li>
+					<li>
+						
+					</li>
+					<li>
+						<label><i>*</i>您的评价:</label>
 						<textarea rows="5" placeholder="您可以详细的点评您的体验及建议"></textarea>
 					</li>
 				</ul>

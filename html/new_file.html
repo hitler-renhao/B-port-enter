@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+body, ul, li {
+	padding: 0;
+	margin: 0;
+}
+ 
+li {
+	list-style-type: none;
+}
+ 
+.rating {
+	width: 130px;
+	height: 26px;
+	margin: 100px auto;
+}
+ 
+.rating-item {
+	float: left;
+	width: 26px;
+	height: 26px;
+	background: url(../images/star.gif) no-repeat;
+	cursor: pointer;
+}
+</style>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+
+	
+	</head>
+	<body>
+		<ul class="rating" id="rating1">
+		<li class="rating-item" title="很不好"></li>
+		<li class="rating-item" title="不好"></li>
+		<li class="rating-item" title="一般"></li>
+		<li class="rating-item" title="好"></li>
+		<li class="rating-item" title="很好"></li>
+	</ul>
+	<ul class="rating" id="rating2">
+		<li class="rating-item" title="很不好"></li>
+		<li class="rating-item" title="不好"></li>
+		<li class="rating-item" title="一般"></li>
+		<li class="rating-item" title="好"></li>
+		<li class="rating-item" title="很好"></li>
+	</ul>
+	<script type="text/javascript">
+		var rating = (function() {
+			var lightOn = function($item, num) {
+				$item.each(function(index) {
+					if (index < num) {
+						$(this).css('background-position', '0 -26px');
+					} else {
+						$(this).css('background-position', '0 0');
+					}
+				});
+			};
+			var init = function(el, num) {
+				var $rating = $(el);
+				var $item = $rating.find('.rating-item');
+				lightOn($item, num);
+				$rating.on('mouseover', '.rating-item', function() {
+					lightOn($item, $(this).index() + 1);
+				}).on('click', '.rating-item', function() {
+					num = $(this).index() + 1;
+				}).on('mouseout', function() {
+					lightOn($item, num);
+				});
+			};
+			//变成jquery
+			$.fn.extend({
+				rating : function(num) {
+					return this.each(function() {
+						init(this, num);
+					});
+				}
+			});
+			return {
+				init : init
+			};
+		})();
+		rating.init('#rating1', 0);
+		//rating.init('#rating2', 3);
+		//jquery的调用形式
+		$('#rating2').rating(4);
+	</script>
+
+--------------------- 
+作者：慕容菲菲636 
+来源：CSDN 
+原文：https://blog.csdn.net/qq_29656961/article/details/78157715 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+	</body>
+</html>

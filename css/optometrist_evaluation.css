@@ -1,0 +1,76 @@
+.content {
+	padding: 0 0.24rem;
+	height: auto;
+	margin-top: 1.3rem;
+}
+
+.content li {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-bottom: 0.3rem;
+}
+
+.content li:last-child {
+	margin-bottom: 0.5rem;
+}
+
+.content li label {
+	color: #333;
+	display: inline-block;
+	float: left;
+	line-height: 0.5rem;
+}
+
+.content li label i {
+	color: red;
+}
+
+.content li span {
+	display: inline-block;
+	float: left;
+	min-width: 2rem;
+	-border: 1px solid #ccc;
+	height: 0.4rem;
+	margin-left: 0.1rem;
+}
+
+.content li textarea {
+	display: inline-block;
+	width: 6.82rem;
+	padding: 0.1rem;
+	line-height: 0.36rem;
+	font-size: 0.12rem;
+}
+
+.submit {
+	display: block;
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	width: 2rem;
+	height: 0.5rem;
+	background: #007DDB;
+	line-height: 0.5rem;
+	text-align: center;
+	margin-left: -1rem;
+	border: none;
+	outline: none;
+	color: #fff;
+	border-radius: 0.05rem;
+}
+
+.content li span i {
+	float: left;
+	width: 0.5rem;
+	height: 0.5rem;
+	background: url(../../images/star.gif) no-repeat 0 0;
+	cursor: pointer;
+}
+/*店铺完善资料*/
+.form{
+	padding:0 0.24rem;
+}
+.content_item{
+	float:left;width:100%;margin-top:0.88rem;
+}
