@@ -22,9 +22,9 @@ $(function () {
         scrollArea: window,
         domDown: {
           domClass: 'dropload-down',
-          domRefresh: '<div class="dropload-refresh">上拉加载更多</div>',
-          domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
-          domNoData: '<div class="dropload-noData">已无数据</div>'
+          domRefresh: '<div class="dropload-refresh" style="text-align:center">上拉加载更多</div>',
+          domLoad: '<div class="dropload-load" style="text-align:center"><span class="loading"></span>加载中...</div>',
+          domNoData: '<div class="dropload-noData" style="text-align:center">已无数据</div>'
         },
         loadDownFn: function (me) {
 
