@@ -33,8 +33,10 @@ $(function () {
         },
         done: function (res) {
           if (res.code == 200) {
+            console.log(res.data);
+            alert(1)
             firstpic.push(res.data);
-            layer.msg('上传成功');
+            // layer.msg('上传成功');
           }
         }
       });

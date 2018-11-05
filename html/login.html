@@ -1,54 +1,41 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>登录</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" href="../css/common/common.css" />
-		<link rel="stylesheet" href="../layui/css/modules/layer/default/layer.css" />
-		<link rel="stylesheet" href="../css/common/header.css" />
-		<link rel="stylesheet" href="../css/login.css" />		
-		
-	</head>
-	<body>
-		<div id="container">
-			<div class="toptop">				
-				<!-- 头部 -->
-				<header>
-					<a href="javascript:;" onclick="javascript:history.back(-1);"><img class="back" src="../images/jt_zuo.png" /></a>
-					<p class="title">登录</p>				
-				</header>
-			</div>
-			<form class="content">
-				<input type="text" placeholder="请输入手机号" id="tel">
-				<input type="password" placeholder="请输入密码" id="psd">
-				<button class="btn">登录</button>
-				<p class="info">还没有e可账户？<a href="javascript:;">立即注册</a></p>
-			</form>
-		</div>		
-		<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>		
-		<script type="text/javascript" src="../layui/lay/modules/layer.js" ></script>
-		<script type="text/javascript" src="../js/common/common.js"></script>	
-		<script type="text/javascript" src="../js/alljs/login.js"></script>	
-		<script>
-			$(".btn").click(function(){
-		        var tel = $.trim($("#tel").val());
-		        var psd = $('#psd').val();
-		        var pattern = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
-		        if (!tel) {
-		            layer.msg("请输入手机号");
-		            return false;
-		        }else if (!pattern.test(tel)) {
-		            layer.msg("请输入正确的手机号");
-		            return false;
-		        };
-		        if(!psd){
-		        	layer.msg("请输入密码");
-		            return false;
-		        }
-		        
-		    })
-		</script>
-	</body>
+
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../layui/css/modules/layer/default/layer.css" />
+	<link rel="stylesheet" href="../css/common/header.css" />
+	<link rel="stylesheet" href="../css/login.css" />
+
+</head>
+
+<body>
+	<div id="container">
+		<div class="toptop">
+			<!-- 头部 -->
+			<header>
+				<!-- <a href="javascript:;" onclick="javascript:history.back(-1);"><img class="back" src="../images/jt_zuo.png" /></a> -->
+				<p class="title">登录</p>
+			</header>
+		</div>
+		<form class="content">
+			<input type="text" placeholder="请输入手机号" id="tel">
+			<input type="password" placeholder="请输入密码" id="psd">
+			<li class="btn">
+				<p>登录</p>
+			</li>
+			<p class="info">还没有e可账户？<a href="javascript:;">立即注册</a></p>
+		</form>
+	</div>
+
+</body>
+<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../layui/lay/modules/layer.js"></script>
+<script type="text/javascript" src="../js/common/common.js"></script>
+<script type="text/javascript" src="../js/alljs/login.js"></script>	
+
 </html>

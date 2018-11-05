@@ -9,7 +9,6 @@ $(function() {
     success: function (data) {
       var res = data.data;
       console.log(res);
-      
     }
   });
 })

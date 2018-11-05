@@ -152,6 +152,7 @@
 						<div class="layui-upload-list display">
 							<img class="layui-upload-img" id="demo1">
 						</div>
+						<input type="hidden" class='img'/>
 					</li>
 
 
@@ -173,6 +174,7 @@
 		</form>
 		<!--商户入住结束-->
 	</div>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=bCGePBQUABFhNFc9SWPlOKoWc5lGHkn3"></script>
 	<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nlqmwS4x5dr1H1Q1wnHfiQ6BSOHZU3j6"></script> -->
 	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../js/common/iscroll.js"></script>
@@ -214,38 +216,40 @@
 		}
 	</script> -->
 	<script>
-			layui.use('upload', function(){
-				var $ = layui.jquery
-				,upload = layui.upload;
-				
-				//普通图片上传
-				var uploadInst = upload.render({
-					elem: '#test1,.layui-upload-list'
-					,url: '/upload/'
-					,before: function(obj){
-						$('.layui-upload-list').removeClass('display')
-						//预读本地文件示例，不支持ie8
-						obj.preview(function(index, file, result){
-							$('#demo1').attr('src', result); //图片链接（base64）
-						});
-					}
-					,done: function(res){
-						//如果上传失败
-						if(res.code > 0){
-							return layer.msg('上传失败');
-						}
-						//上传成功
-					}
-					,error: function(){
-						//演示失败状态，并实现重传
-						var demoText = $('#demoText');
-						demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
-						demoText.find('.demo-reload').on('click', function(){
-							uploadInst.upload();
-						});
-					}
-				}); 
-			});
+//			layui.use('upload', function(){
+//				var $ = layui.jquery
+//				,upload = layui.upload;
+//				
+//				//普通图片上传
+//				var uploadInst = upload.render({
+//					elem: '#test1,.layui-upload-list'
+//					,url: lala+'/shop/uploadImg'
+//					,before: function(obj){
+//						$('.layui-upload-list').removeClass('display')
+//						//预读本地文件示例，不支持ie8
+//						obj.preview(function(index, file, result){
+//							$('#demo1').attr('src', result); //图片链接（base64）
+//						});
+//					}
+//					,done: function(res){
+//						//如果上传失败
+//						if(res.code ==200){
+//							var imgurl = res.data[0];
+//							//console.log(imgurl);						
+//							return layer.msg('上传成功');
+//						}
+//						//上传成功
+//					}
+//					,error: function(){
+//						//演示失败状态，并实现重传
+//						var demoText = $('#demoText');
+//						demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+//						demoText.find('.demo-reload').on('click', function(){
+//							uploadInst.upload();
+//						});
+//					}
+//				}); 
+//			});
 		</script>
 </body>
 

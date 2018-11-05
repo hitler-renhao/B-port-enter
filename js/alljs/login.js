@@ -21,16 +21,16 @@ $(function() {
 				}
 				$.ajax({
 					type: "post",
-					url: global + "/login/publicLogin",
-					//async: true,
+					url: jianjian + "/login/publicLogin",
+					async: true,
 					data: {
 						"iphone": tel,
 						"password": psd,
 						"type": 1  //需获取  先写死
 					},
 					success: function(data) {
-						console.log(data);
 						if(data.code == 200){
+							console.log(data);
 							layer.msg('登录成功！');
 						}else{
 							layer.alert("此号码还未注册,请先注册！",function(){
