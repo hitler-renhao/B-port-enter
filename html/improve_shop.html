@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="../css/common/layui.css">
 	<link rel="stylesheet" href="../css/improve_shop.css">
 </head>
+
 <body>
 	<!-- 头部 -->
 	<header>
@@ -19,15 +20,17 @@
 	</header>
 	<!--顶部结束-->
 	<div id="container">
+		<i class="fl" style="line-height:1rem;color: red;">*</i>
 		<div class="shop-pic">
 			<p class="introduce-text">店铺主图</p>
 			<ul>
 				<li class="fl">
-					<div class="layui-upload face">
-						<div class="layui-upload-img" id="faces">
-							<p>+</p>
+					<div class="layui-upload fl upload-pic face">
+						<input type="button" class="layui-btn" id="test1">
+						<p class="btn-add">+</p>
+						<div class="layui-upload-list1 display">
+							<img class="layui-upload-img1" id="demo1">
 						</div>
-						<input class="upload-file" type="file" accept="undefined" name="file">
 					</div>
 				</li>
 				<li class="shop-pic-text">
@@ -36,36 +39,40 @@
 				<li style="clear:both"></li>
 			</ul>
 		</div>
+		<i class="fl" style="line-height:1rem;color: red;">*</i>
 		<div class="Facilities-introduce">
 			<p class="introduce-text">店内设施介绍</p>
-			<textarea name="" id="" cols="48" rows="5" placeholder="您可以对店内的仪器进行介绍说明，也可以对店内商品进行介绍"></textarea>
+			<textarea name="" id="shop-introduce" cols="48" rows="5" placeholder="您可以对店内的仪器进行介绍说明，也可以对店内商品进行介绍"></textarea>
 		</div>
 		<!-- 上传店内图片 -->
 		<table>
 			<tbody>
 				<tr>
 					<td>
-						<div class="layui-upload upload-pic fl">
-							<div class="layui-upload-img" id="faces">
-								<p>+</p>
+						<div class="layui-upload fl upload-pic face">
+							<input type="button" class="layui-btn shop-goods-info" id="test2">
+							<p class="btn-add">+</p>
+							<div class="layui-upload-list2 shop-info-list display">
+								<img class="layui-upload-img shop-info-upload" id="demo2">
 							</div>
-							<input class="upload-file" type="file" accept="undefined" name="file">
 						</div>
 					</td>
 					<td>
-						<div class="layui-upload upload-pic fl">
-							<div class="layui-upload-img" id="faces">
-								<p>+</p>
+						<div class="layui-upload fl upload-pic face">
+							<input type="button" class="layui-btn shop-goods-info" id="test3">
+							<p class="btn-add">+</p>
+							<div class="layui-upload-list3 shop-info-list display">
+								<img class="layui-upload-img shop-info-upload" id="demo3">
 							</div>
-							<input class="upload-file" type="file" accept="undefined" name="file">
 						</div>
 					</td>
 					<td>
-						<div class="layui-upload upload-pic fl">
-							<div class="layui-upload-img" id="faces">
-								<p>+</p>
+						<div class="layui-upload fl upload-pic face">
+							<input type="button" class="layui-btn shop-goods-info" id="test4">
+							<p class="btn-add">+</p>
+							<div class="layui-upload-list4 shop-info-list display">
+								<img class="layui-upload-img shop-info-upload" id="demo4">
 							</div>
-							<input class="upload-file" type="file" accept="undefined" name="file">
 						</div>
 					</td>
 				</tr>
@@ -79,32 +86,20 @@
 		<!-- 上传店内图片完成 -->
 		<!-- 店内人员 -->
 		<div class="shop-staff">
+			<i class="fl" style="line-height:1rem;color: red;">*</i>
 			<ul>
+				<p class="introduce-text">店内人员</p>
 				<li class="straff-info">
-					<div class="layui-upload upload-staff-pic fl">
-						<div class="layui-upload-img" id="faces">
-							<p class="staff-header">+</p>
+					<div class="layui-upload fl upload-pic face">
+						<input type="button" class="layui-btn shop-goods-infos" id="test5">
+						<p class="btn-add">+</p>
+						<div class="layui-upload-list5 shop-info-list display">
+							<img class="layui-upload-img shop-info-uploads1" id="demo5">
 						</div>
-						<input class="upload-file" type="file" accept="undefined" name="file">
-						<img src="" alt="">
 					</div>
 					<div class="staff-introduce">
-						<input class="input-optometrist" placeholder="输入姓名">
-						<input class="input-optometrist" placeholder="验光师擅长介绍">
-					</div>
-					<i class="layui-icon layui-icon-close-fill"></i>
-				</li>
-				<li class="straff-info">
-					<div class="layui-upload upload-staff-pic fl">
-						<div class="layui-upload-img" id="faces">
-							<p class="staff-header">+</p>
-						</div>
-						<input class="upload-file" type="file" accept="undefined" name="file">
-						<img src="" alt="">
-					</div>
-					<div class="staff-introduce">
-						<input class="input-optometrist" placeholder="输入姓名">
-						<input class="input-optometrist" placeholder="验光师擅长介绍">
+						<input class="input-optometrist-name1" placeholder="输入姓名">
+						<input class="input-optometrist-intro1" placeholder="验光师擅长介绍">
 					</div>
 					<i class="layui-icon layui-icon-close-fill"></i>
 				</li>
@@ -114,7 +109,7 @@
 			</div>
 			<div class="subbox">
 				<a href="javascript:;" class="submit optometrist-next">
-					<input type="button" value="提交" />
+					<input type="button" value="提交" class="submit-btn" />
 				</a>
 			</div>
 		</div>
@@ -123,5 +118,29 @@
 <script src="../js/common/jquery-3.3.1.min.js"></script>
 <script src="../js/common/common.js"></script>
 <script src="../js/common/bootstrap.min.js"></script>
+<script src="../layui/layui.js"></script>
+<script src="../js/alljs/improve_shop.js"></script>
+<script>
+	function upLoad() {
+		var fileInput = document.getElementById("upimg");
+		var file = fileInput.files[0];
+		//创建读取文件的对象
+		var reader = new FileReader();
+		//创建文件读取相关的变量
+		var imgFile;
+		//为文件读取成功设置事件
+		reader.onload = function (e) {
+			// alert('文件读取完成');
+			imgFile = e.target.result;
+			console.log(imgFile);
+			$("#img").attr('src', imgFile);
+		};
+
+		//正式读取文件
+		reader.readAsDataURL(file);
+	}
+</script>
+<script>
+</script>
 
 </html>

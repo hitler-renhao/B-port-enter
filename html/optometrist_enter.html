@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="http://wx.bjysjglasses.com/static/wxshop/css/LArea.min.css">
 	<link rel="stylesheet" type="text/css" href="http://wx.bjysjglasses.com/static/wxshop/css/zepto.mtimer.css">
 	<link rel="stylesheet" href="http://wx.bjysjglasses.com/static/wxshop/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/index.css" />
+	<link rel="stylesheet" href="../css/shop_enter.css" />
 	<link rel="stylesheet" href="http://wx.bjysjglasses.com/static/wxshop/css/layer.css">
 	<link rel="stylesheet" href="../css/common/layui.css">
 </head>
@@ -99,7 +99,7 @@
 		<!--顶部结束-->
 		<div class="notice">
 			<a href="./notice.html">
-					<span>入住说明</span><i class="layui-icon layui-icon-help"></i>
+				<span>入住说明</span><i class="layui-icon layui-icon-help"></i>
 			</a>
 		</div>
 		<!--验光师入住-->
@@ -118,16 +118,16 @@
 				<input id="addr" type="text" placeholder="请输入详细地址" />
 			</div>
 			<div class="ipt phone">
-				<p>您的电话 :</p>
-				<input id="phone" type="text" placeholder="请输入您的电话" />
-      </div>
-      <div class="ipt time main">
-          <p>工作时间 :</p>
-          <!-- <input id="beginTime" type="text" placeholder="请选择上门时间" value="" /> -->
-          <input class="time" type="text" value="14:30" onchange="console.log('Time changed')" placeholder="请选择营业时间" />
-          <span>至</span>
-          <input class="time1" type="text" value="14:30" onchange="console.log('Time changed')" placeholder="请选择营业时间" />
-        </div>
+				<p>您的身份证号 :</p>
+				<input id="phone" type="text" placeholder="请输入您的身份证号" />
+			</div>
+			<div class="ipt time main">
+				<p>营业时间 :</p>
+				<!-- <input id="beginTime" type="text" placeholder="请选择上门时间" value="" /> -->
+				<input id="startTime" type="text" onchange="console.log('Time changed')" placeholder="结束" />
+				<span>至</span>
+				<input id="endTime" type="text" onchange="console.log('Time changed')" placeholder="开始" />
+			</div>
 			<div class="shop-pic">
 				<p>身份证</p>
 				<ul>

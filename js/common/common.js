@@ -12,6 +12,7 @@
 })(document, window);
 
 var global = 'http://wx.bjysjglasses.com:8181';
+var jianjian = 'http://192.168.1.227:8181';
 var globa = 'http://wx.bjysjglasses.com:8484/ysj/wxshop/admin';
 //10.0.232.197
 //var glob = 'http://10.0.232.38:8484/ysj/wxshop/admin';

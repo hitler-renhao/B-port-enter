@@ -15,7 +15,10 @@ $(function () {
 		var uriImg = $('.layui-upload-list').attr('src'); //图片路径
 		var pattern = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/; // 手机号正则
 		var telephone = /\d{3}-\d{8}|\d{4}-\d{7}/;
-
+		var businessHours = startTime + '-' + endTime;
+		console.log(uriImg);
+		
+		
 		// 判断信息是否完整
 		if (!shopName || !shopArea || !shopAddress || !shopPhone || !startTime || !endTime) {
 			layer.alert('请将必填信息填写完整！');
@@ -29,20 +32,20 @@ $(function () {
 				layer.msg('详细地址不得少于4个汉字或字母')
 			} else {
 				$.ajax({
-					type: 'GET',
+					type: 'post',
 					url: global + "/shop/addShop",
 					async: true,
 					data: {
-						'addresInfo': shopArea,
-						'addres': shopAddress,
-						'shopname': shopName,
-						'phone': shopPhone,
-						'businessHours': startTime,
-						'off': 1,
-						'uriImg': uriImg,
+						'addresInfo': shopArea,	// 地区
+						'addres': shopAddress,	// 详细地址
+						'shopname': shopName,		//名称
+						'phone': shopPhone,	//电话
+						'businessHours': businessHours,	// 营业时间
+						'off': 1,	// 营业状态
+						'uriImg': uriImg,	// 照片
 					},
 					success: function (data) {
-						layer.msg('上传成功，请内心等待后台审核')
+						// location.href = './improve_shop.html'
 					}
 				})
 			}

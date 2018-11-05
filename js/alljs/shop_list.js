@@ -10,7 +10,6 @@ $(function () {
     success: function (data) {
       var res = data.data;
       console.log(res.result);
-      console.log(tabLenghtArray);
       var itemIndex = 0;
       var count = 0;
       var tabLoadEndArray = [false, false, false];
@@ -53,7 +52,7 @@ $(function () {
                 '<span class="opbox">' +
                 '<span class="namebox">' +
                 '<p class="name">' + res.result[count].shopname + '</p>' +
-                '<i>已服务1421人</i>' +
+                '<i>已服务' + 1421 + '人</i>' +
                 '</span>' +
                 '<span class="namebox">' +
                 '<p class="title">评价：</p>' +
@@ -64,10 +63,10 @@ $(function () {
                 '<i></i>' +
                 '</span>' +
                 '</span>' +
-                '<p class="evaluate">营业时间：8:30-20:00</p>' +
+                '<p class="evaluate">营业时间：' + res.result[count].businessHours + '</p>' +
                 '<span class="renz">' +
-                '<p>北京朝阳望京博泰大厦</p>' +
-                '<p>1.02km</p>' +
+                '<p>' + res.result[count].addresInfo + res.result[count].addres + '</p>' +
+                '<p>' + '1.02km' + '</p>' +
                 '</span>' +
                 '</span>' +
                 '</li>'
