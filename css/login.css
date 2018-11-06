@@ -21,8 +21,10 @@ li {
 	margin-bottom: 0.1rem;
 }
 
+
 .info {
-	font-size: 0.16rem;
+	font-size: 0.3rem;
+	line-height: 1rem;
 }
 
 .info a {
