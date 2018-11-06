@@ -1,10 +1,9 @@
 $(function () {
-	// var href = window.location.href;
-	
-	// var type = href.split('?')[1].split('&')[0].split('=')[1];	// 用户类型
-	var type = 1;
-	// var openId = href.split('?')[1].split('&')[1].split('=')[1];	// 微信用户账号
-	var openId = '123';
+	var href = window.location.href;
+	var type = href.split('?')[1].split('&')[0].split('=')[1];	// 用户类型
+	// var type = 1;
+	var openId = href.split('?')[1].split('&')[1].split('=')[1];	// 微信用户账号
+	// var openId = '123';
 	localStorage.setItem("typeId", type); //获取判断
 	localStorage.setItem("openId", openId); // 判断店铺
 	var tokenKey = localStorage.getItem('tokenKey'); // 登录凭证
