@@ -103,4 +103,40 @@ $(function () {
 
     }
   });
+
+
+
+  // 创建地图实例
+  var gpsmarkers = [];
+  var markers = [];
+  var pointArr = [];
+  var pt = null;
+
+  navigator.geolocation.getCurrentPosition(geo_success, geo_error, {
+    // 指示浏览器获取高精度的位置，默认为false
+    enableHighAcuracy: true,
+    // 指定获取地理位置的超时时间，默认不限时，单位为毫秒
+    timeout: 5000,
+    // 最长有效期，在重复获取地理位置时，此参数指定多久再次获取位置。
+    maximumAge: 1000
+  });
+
+  function geo_success(position) {
+    pt = new BMap.Point(position.coords.longitude, position.coords.latitude);
+    var convertor = new BMap.Convertor();
+    pointArr.push(pt);
+    convertor.translate(pointArr, 1, 5, translateCallback);
+  }
+
+  function geo_error(msg) {
+    console.log(msg.code, msg.message);
+    alert(定位失败, 请打开手机GPS);
+  }
+  //坐标转换完之后的回调函数
+  translateCallback = function (data) {
+    if (data.status === 0) {
+      alert("经度:" + data.points[0].lng); //输出百度坐标的经度
+      alert("纬度:" + data.points[0].lat); //输出百度坐标的纬度
+    }
+  }
 })

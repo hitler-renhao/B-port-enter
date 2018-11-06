@@ -36,6 +36,7 @@
 	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../layui/lay/modules/layer.js"></script>
 	<script>
+		var typeId = localStorage.getItem('typeId');
 		$(".btn").click(function () {
 			var $optistmobile = $.trim($("#tel").val());
 			var $password = $("#psd").val();
@@ -62,15 +63,24 @@
 					data: {
 						"iphone": $optistmobile,
 						"password": $password,
-						"type": 1  //需获取  先写死
+						"type": typeId,  //需获取  先写死
 					},
 					success: function(data) {
 						if(data.code == 200){
-							console.log(data);
+							console.log(data.data);
+							var res = data.data;
+							localStorage.setItem('userId',res.id);
+							localStorage.setItem('tokenKey',res.tokenKey);
 							layer.msg('注册成功！');
-							// location.href = ''
+							switch(typeId) {
+								case '1': location.href = './shop_info.html'; break;
+								case '2': location.href = './optometrist_list.html'; break;
+								// case 3: location.href = './shop_info.html'; break;		// 用户端
+							}
+							
 						}else{
 							layer.alert(data.msg);
+							location.href = './login.html';
 						}
 					}
 				});
