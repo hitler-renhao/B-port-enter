@@ -1,212 +1,164 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<meta charset="UTF-8">
-	<title>验光师入住</title>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<link rel="stylesheet" href="../css/common/common.css" />
-	<link rel="stylesheet" href="../css/common/header.css" />
-	<link rel="stylesheet" href="http://wx.bjysjglasses.com/static/wxshop/css/footer.css" />
-	<link rel="stylesheet" type="text/css" href="http://wx.bjysjglasses.com/static/wxshop/css/LArea.min.css">
-	<link rel="stylesheet" type="text/css" href="http://wx.bjysjglasses.com/static/wxshop/css/zepto.mtimer.css">
-	<link rel="stylesheet" href="http://wx.bjysjglasses.com/static/wxshop/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/shop_enter.css" />
-	<link rel="stylesheet" href="http://wx.bjysjglasses.com/static/wxshop/css/layer.css">
-	<link rel="stylesheet" href="../css/common/layui.css">
-</head>
-<style type="text/css">
-	.timeb {
-		color: #fb8724;
-		text-align: right;
-		line-height: 0.6rem;
-		display: inline-block;
-		width: 7.26rem;
-		padding-right: 0.24rem;
-	}
+	<head>
+		<meta charset="UTF-8">
+		<title>验光师入住</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="../css/common/common.css" />
+		<link rel="stylesheet" href="../css/common/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common/LArea.min.css">
+		<link rel="stylesheet" href="../css/common/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/common/layer.css">
+		<link rel="stylesheet" href="../layui/css/layui.css">
+		<link rel="stylesheet" href="../css/index.css" />
+		
+	</head>	
 
-	.type2 {
-		margin: 0.3rem 0;
-	}
+	<body>
+		<header>
+			<p class="title">入住e可</p>
+		</header>
+		<div id="container">
+			<!-- 头部 -->
 
-	.type2 p {
-		line-height: 0.6rem;
-		margin-left: 0.24rem;
-		float: left;
-		font-size: 0.28rem;
-	}
-
-	.type2 a {
-		display: inline-block;
-		width: 1.9rem;
-		height: 0.6rem;
-		background: #fff;
-		border: 1px solid #67a9fe;
-		color: #414141;
-		font-size: 0.28rem;
-		text-align: center;
-		line-height: 0.6rem;
-		border-radius: 0.1rem;
-		margin-left: 0.66rem;
-	}
-
-	.type2 .serive2 {
-		background: #67a9fe;
-		border: 1px solid #67a9fe;
-		color: #fff;
-	}
-
-	.select {
-		border: none;
-	}
-
-	.serive9 {
-		margin-top: 2rem !important;
-	}
-
-	h1 {
-		font-size: 20px;
-		margin-bottom: 3px;
-	}
-
-	h3 {
-		font-size: 13px;
-		margin-top: 0px;
-	}
-
-	.main {
-		text-align: center;
-	}
-
-	.time {
-		display: inline-block;
-		/* font-size: 26px; */
-		/* padding: 5px; */
-		text-align: center;
-		/* width: 86px; */
-	}
-</style>
-
-<body>
-	<header>
-		<p class="title">入住e可</p>
-	</header>
-	<div id="container">
-		<!-- 头部 -->
-
-		<!--顶部结束-->
-		<div class="notice">
-			<a href="./notice.html">
-				<span>入住说明</span><i class="layui-icon layui-icon-help"></i>
-			</a>
-		</div>
-		<!--验光师入住-->
-		<form id="form2">
-			<div class="ipt name">
-				<p>您的姓名 :</p>
-				<input id="name" type="text" placeholder="请输入您的姓名" />
-			</div>
-			<div class="ipt city">
-				<p>服务地区 :</p>
-				<input id="city" type="text" readonly="" placeholder="请选择地区" />
-				<input id="value" type="hidden" />
-			</div>
-			<div class="ipt addr">
-				<p>详细地址 :</p>
-				<input id="addr" type="text" placeholder="请输入详细地址" />
-			</div>
-			<div class="ipt phone">
-				<p>您的身份证号 :</p>
-				<input id="phone" type="text" placeholder="请输入您的身份证号" />
-			</div>
-			<div class="ipt time main">
-				<p>营业时间 :</p>
-				<!-- <input id="beginTime" type="text" placeholder="请选择上门时间" value="" /> -->
-				<input id="startTime" type="text" onchange="console.log('Time changed')" placeholder="结束" />
-				<span>至</span>
-				<input id="endTime" type="text" onchange="console.log('Time changed')" placeholder="开始" />
-			</div>
-			<div class="shop-pic">
-				<p>身份证</p>
-				<ul>
-					<li class="fl">
-						<div class="layui-upload face">
-							<div class="layui-upload-img" id="faces">
-								<p>+</p>
-							</div>
-							<input class="upload-file" type="file" accept="undefined" name="file">
-							<p class="idcard-text">头像面</p>
-						</div>
-
-					</li>
-					<li class="shop-pic-text">
-						<div class="layui-upload face" style="margin-left:1rem;">
-							<div class="layui-upload-img" id="faces">
-								<p>+</p>
-							</div>
-							<input class="upload-file" type="file" accept="undefined" name="file">
-							<p class="idcard-text">国徽面</p>
-						</div>
-
-					</li>
-				</ul>
-			</div>
-			<div class="shop-pic">
-				<p>验光师资格证</p>
-				<ul>
-					<li class="fl">
-						<div class="layui-upload face">
-							<div class="layui-upload-img" id="faces">
-								<p>+</p>
-							</div>
-							<input class="upload-file" type="file" accept="undefined" name="file">
-						</div>
-					</li>
-					<li class="shop-pic-text">
-						<p>请上传完整、清晰的营业执照图片，营业执照中的公司名称需与填写的的店铺名称一致！</p>
-					</li>
-				</ul>
-			</div>
-			<div class="subbox">
-				<a href="javascript:;" class="submit optometrist-next">
-					<input type="button" value="下一步" onfocus="this.blur();" id="sm" />
+			<!--顶部结束-->
+			<div class="notice" style="margin:0;border:none;">
+				<a href="./notice.html">
+					<span>入驻说明</span><i class="layui-icon layui-icon-help"></i>
 				</a>
 			</div>
-		</form>
-	</div>
+			<!--验光师入住-->
+			<form id="form2">
+				<div class="iptbox">
+					<label>头像：</label>
+					<div class="layui-upload fl">
+						<input type="button" class="layui-btn" id="test1">
+						<p class="btn-add">+</p>
+						<div class="layui-upload-list display" id="headurl">
+							<img class="layui-upload-img" id="demo1">
+						</div>
+						<input type="hidden" class='img'/>
+					</div>
+					<p class="imgdel">头像将在您的详情页展示，方便用户更好的了解您！</p>
+				</div>
+				<div class="ipt name">
+					<p>您的姓名 :</p>
+					<input id="name" type="text" placeholder="请输入您的姓名" />
+				</div>
+				<div class="ipt city">
+					<p>服务地区 :</p>
+					<input id="city" type="text" readonly="" placeholder="请选择地区" />
+					<input id="value" type="hidden" />
+				</div>
+				<div class="ipt addr">
+					<p>详细地址 :</p>
+					<input id="addr" type="text" placeholder="请输入详细地址" />
+				</div>
+				<div class="ipt phone">
+					<p>身份证号:</p>
+					<input id="idCard" type="text" placeholder="请输入您的身份证号" />
+				</div>
+				<!--<div class="ipt time main">
+					<p>工作时间 :</p>-->
+					<!-- <input id="beginTime" type="text" placeholder="请选择上门时间" value="" /> -->
+					<!--<input class="time" type="text" value="00:00" onchange="console.log('Time changed')" placeholder="请选择营业时间" style="width:2rem;"/>
+					<span>至</span>
+					<input class="time1" type="text" value="24:00" onchange="console.log('Time changed')" placeholder="请选择营业时间" style="width:2rem;" />
+				</div>-->
+				<div class="shop-pic">
+					<p>身份证</p>
+					<ul>
+						<li class="fl">
+							<div class="layui-upload lala">
+								<input type="button" id="faces">
+								<p class="btn-add">+</p>
+								<div class="layui-upload-list display" id="idcard">
+									<img class="layui-upload-img" id="demo2">
+								</div>
+								<p class="idcard-text">头像面</p>
+							</div>
+							
+							<!--<div class="layui-upload face">
+								<div class="layui-upload-img" id="faces">
+									<p>+</p>
+								</div>
+								<input class="upload-file" type="file" accept="undefined" name="file">
+								<p class="idcard-text">头像面</p>
+							</div>-->
 
+						</li>
+						<li class="shop-pic-text">
+							<!--<div class="layui-upload face" style="margin-left:1rem;">
+								<div class="layui-upload-img" id="faces">
+									<p>+</p>
+								</div>
+								<input class="upload-file" type="file" accept="undefined" name="file">
+								<p class="idcard-text">国徽面</p>
+							</div>-->
+							<div class="layui-upload lala">
+								<input type="button" id="back">
+								<p class="btn-add">+</p>
+								<div class="layui-upload-list display" id="backcard">
+									<img class="layui-upload-img" id="idback">
+								</div>
+								<p class="idcard-text">国徽面</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="shop-pic">
+					<p>验光师资格证</p>
+					<ul>
+						<li class="fl">
+							<!--<div class="layui-upload">
+								<div class="layui-upload-img" id="zige">
+									<p>+</p>
+								</div>
+								<input class="upload-file" type="file" accept="undefined" name="file" id="bookimg">
+							</div>-->
+							<div class="layui-upload lala">
+								<input type="button" id="zige">
+								<p class="btn-add">+</p>
+								<div class="layui-upload-list display">
+									<img class="layui-upload-img" id="bookimg">
+								</div>								
+							</div>
+						</li>
+						<li class="shop-pic-text">
+							<p>请上传完整、清晰的营业执照图片，营业执照中的公司名称需与填写的的店铺名称一致！</p>
+						</li>
+					</ul>
+				</div>
+				<div class="subbox">
+					<a href="javascript:;" class="submit optometrist-next">
+						<input type="button" value="下一步" onfocus="this.blur();" id="sm" />
+					</a>
+				</div>
+			</form>
+		</div>
 
-
-
-
-
-
-
-
-
-
-	<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nlqmwS4x5dr1H1Q1wnHfiQ6BSOHZU3j6"></script> -->
-	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../js/common/iscroll.js"></script>
-	<script type="text/javascript" src="../js/common/jquery.cookie.js"></script>
-	<script type="text/javascript" src="../js/common/common.js"></script>
-	<script type="text/javascript" src="../js/common/LArea.min.js"></script>
-	<script type="text/javascript" src="../js/common/LAreaData2.js"></script>
-	<!-- <script type="text/javascript" src="../js/alljs/right-serive.js"></script> -->
-	<script type="text/javascript" src="../js/common/layer.js"></script>
-	<script type="text/javascript" src="../js/common/layui.js"></script>
-	<script type="text/javascript" src="../js/alljs/index.js"></script>
-	<script src="../js/common/jquery-clock-timepicker.js"></script>
-
-	<!-- tab栏切换选择 -->
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('.time').clockTimePicker({});
-			$('.time1').clockTimePicker({});
-		});
-	</script>
-</body>
+		<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nlqmwS4x5dr1H1Q1wnHfiQ6BSOHZU3j6"></script> -->
+		<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="../js/common/iscroll.js"></script>
+		<script type="text/javascript" src="../js/common/jquery.cookie.js"></script>
+		
+		<script type="text/javascript" src="../js/common/LArea.min.js"></script>
+		<script type="text/javascript" src="../js/common/LAreaData2.js"></script>
+		<script type="text/javascript" src="../js/common/layer.js"></script>
+		<script type="text/javascript" src="../layui/layui.js"></script>
+		<script type="text/javascript" src="../js/common/jquery-clock-timepicker.js"></script>
+		<script type="text/javascript" src="../js/common/common.js" ></script>
+		<script type="text/javascript" src="../js/alljs/optometrist_enter.js"></script>
+		<!-- tab栏切换选择 -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.time').clockTimePicker({});
+				$('.time1').clockTimePicker({});
+			});
+		</script>
+	</body>
 
 </html>

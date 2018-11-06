@@ -1,24 +1,24 @@
 $(function () {
-  var str = '';
-  var index = 5;
-  $('.add-optometrist').click(function() {
-    index++;
-    str += + '<li class="straff-info">'
-            + '<div class="layui-upload fl upload-pic face">'
-              + '<input type="button" class="layui-btn shop-goods-infos" id="test' + index + '">'
-              + '<p class="btn-add">+</p>'
-              + '<div class="layui-upload-list' + index + ' shop-info-list display">'
-                + '<img class="layui-upload-img shop-info-uploads' + index + '" id="demo' + index + '">'
-              + '</div>'
-            + '</div>'
-            + '<div class="staff-introduce">'
-              + '<input class="input-optometrist-name' + index + '" placeholder="输入姓名">'
-              + '<input class="input-optometrist-intro' + index + '" placeholder="验光师擅长介绍">'
-            + '</div>'
-            + '<i class="layui-icon layui-icon-close-fill"></i>'
-          + '</li>'
-    $('#shop-staff-list').append(str);
-  })
+  // var str = '';
+  // var index = 5;
+  // $('.add-optometrist').click(function() {
+  //   index++;
+  //   str += + '<li class="straff-info">'
+  //           + '<div class="layui-upload fl upload-pic face">'
+  //             + '<input type="button" class="layui-btn shop-goods-infos" id="test' + index + '">'
+  //             + '<p class="btn-add">+</p>'
+  //             + '<div class="layui-upload-list' + index + ' shop-info-list display">'
+  //               + '<img class="layui-upload-img shop-info-uploads' + index + '" id="demo' + index + '">'
+  //             + '</div>'
+  //           + '</div>'
+  //           + '<div class="staff-introduce">'
+  //             + '<input class="input-optometrist-name' + index + '" placeholder="输入姓名">'
+  //             + '<input class="input-optometrist-intro' + index + '" placeholder="验光师擅长介绍">'
+  //           + '</div>'
+  //           + '<i class="layui-icon layui-icon-close-fill"></i>'
+  //         + '</li>'
+  //   $('#shop-staff-list').append(str);
+  // })
   var shopId = localStorage.getItem('shopId');
   var tokenKey = localStorage.getItem('tokenKey');
   

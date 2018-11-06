@@ -1,149 +1,148 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="UTF-8">
-	<title>验光师列表</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<link rel="stylesheet" href="../css/common/common.css" />
-	<link rel="stylesheet" href="../css/common/layui.css">
-	<link rel="stylesheet" href="../css/common/header.css" />
-	<link rel="stylesheet" href="../css/optometrist_list.css" />
-	<link rel="stylesheet" href="../css/eke.css">
-</head>
-
-<body>
-	<header>
-		<a href="javascript:;" onclick="javascript:history.back(-1);">
-		<img class="back" src="../images/jt_zuo.png" /></a>
-		<p class="title">e可</p>
-	</header>
-	<div id="container">
-		<ul class="tab">
-			<li class="fl layui-col-xs2 layui-col-sm2 layui-col-md2">
-				<i class="layui-icon layui-icon-location"></i>
-				<a href="javascript:;">北京市</a>
-			</li>
-			<li class="fl bleft layui-col-xs4 layui-col-sm4 layui-col-md4 shop">
-				<a href="javascript:;">e可门店</a>
-			</li>
-			<li class="fl layui-col-xs6 layui-col-sm6 layui-col-md6 optometrist">
-				<a href="javascript:;">e可验光师</a>
-			</li>
-		</ul>
-		<!--门店列表-->
-		<div class="wrapper" id="shop_list">
-			<div id="scroller">
-				<ul class="content popular">
-					<li>
-						<img src="../images/touxiang.png" class="user" />
-						<span class="opbox">
-							<span class="namebox">
-								<p class="name">不二家的店</p>
-								<i>已服务1421人</i>
+	<head>
+		<meta charset="UTF-8">
+		<title>验光师详情(自己)</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="../css/common/common.css" />
+		<link rel="stylesheet" href="../css/common/header.css" />
+		<link rel="stylesheet" href="../css/common/layer.css" />
+		<link rel="stylesheet" href="../css/optometrist_list.css" />		
+		<script type="text/javascript" src="../js/common/common.js"></script>	
+		<style>
+			.edit-info {
+			      position: absolute;
+			      top: 0;
+			      right: .2rem;
+			      font-size: 12px;
+			      color: skyblue;
+			      line-height:0.88rem;
+			    }
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div class="toptop">
+				<!--<div class="topbox">-->
+					<!-- 头部 -->
+					<header>
+						<a href="javascript:;" onclick="javascript:history.back(-1);"><img class="back" src="../images/jt_zuo.png" /></a>
+						<p class="title">验光师详情</p>		
+						 <a href="./optometrist_enter.html" class="edit-info">修改资料</a>
+					</header>
+					<!--搜索验光师-->
+					<!--<div class="search">
+						<!--定位-->
+						<!--<div class="glo">
+							<span class="place">
+								<img src="../images/goli.png" class="placeicon" />
+								<h3>朝阳区望京博泰大厦</h3>
+								<img src="../images/san.png" class="show" />
 							</span>
-							<span class="namebox">
-								<p class="title">评价：</p>
-								<span class="star">
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-								</span>
-							</span>
-							<p class="evaluate">营业时间：8:30-20:00</p>
-							<span class="renz">
-								<p>北京朝阳望京博泰大厦</p>
-								<p>1.02km</p>
-							</span>
-						</span>
-					</li>
-					<li>
-						<img src="../images/touxiang.png" class="user" />
-						<span class="opbox">
-							<span class="namebox">
-								<p class="name">不二家的店</p>
-								<i>已服务1421人</i>
-							</span>
-							<span class="namebox">
-								<p class="title">评价：</p>
-								<span class="star">
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-								</span>
-							</span>
-							<p class="evaluate">营业时间：8:30-20:00</p>
-							<span class="renz">
-								<p>北京朝阳望京博泰大厦</p>
-								<p>1.02km</p>
-							</span>
-						</span>
-					</li>
-				</ul>
+						</div>-->
+						<!--搜索框-->
+						<!--<div class="sear">
+							<input type="text" placeholder="搜索验光师" />
+							
+						</div>-->
+					<!--</div>-->
+					<!--搜搜验光师结束-->
+				<!--</div>-->
 			</div>
-		</div>
-		<!-- 验光师列表 -->
-		<div class="wrapper display" id="optometrist_list">
-			<ul class="popular">
-				<li>
-					<img src="../images/touxiang.png" class="userpic" />
-					<span class="opbox">
-						<span class="namebox">
-							<p class="name">刘珂可</p>
-						</span>
-						<span class="namebox">
-							<p class="title">好评：</p>
-							<span class="star">
-								<i></i>
-								<i></i>
-								<i></i>
-								<i></i>
+			<!--验光师列表-->
+			<!--<div>-->
+		        <div class="scroller content" id="wrapper">
+		            <ul id="popular">
+		            	<li>
+							<img src="../images/touxiang.png" class="user" />
+							<span class="opboxa" style="line-height:0.4rem;">
+								<span class="namebox">
+									<p class="name"></p>
+									<!--<a href='javascript:;'>平台已认证</a>-->
+								</span>
+								<span class="namebox">
+									<p class="title1">好评：</p>
+									<span class="star">
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+									</span>
+								</span>
+								<p class="evaluate">实名认证：<i>已实名备案</i>&nbsp;&nbsp;实名认证：<i>已实名备案</i></p>
+								<!--<p class="evaluate">7年资历，专注青少年近视防控，成年视疲劳、近视健康预防疾视健康预防疾</p>
+								<span class="renz">
+									<p>北京朝阳望京博泰大厦</p>
+									<p>12.66公里</p>
+								</span>-->
 							</span>
-						</span>
-						<p class="evaluate">实名认证：<i>已实名备案</i>&nbsp;&nbsp;实名认证：<i>已实名备案</i></p>
-					</span>
-				</li>
-				<li>
-					<img src="../images/touxiang.png" class="userpic" />
-					<span class="opbox">
-						<span class="namebox">
-							<p class="name">刘珂可</p>
-						</span>
-						<span class="namebox">
-							<p class="title">好评：</p>
-							<span class="star">
-								<i></i>
-								<i></i>
-								<i></i>
-								<i></i>
-							</span>
-						</span>
-						<p class="evaluate">实名认证：<i>已实名备案</i>&nbsp;&nbsp;实名认证：<i>已实名备案</i></p>
-					</span>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../js/common/common.js"></script>
-	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nlqmwS4x5dr1H1Q1wnHfiQ6BSOHZU3j6"></script>
-	<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
-	<script type="text/javascript" src="../js/common/iscroll.js"></script>
-</body>
-<script>
-	$('.optometrist').click(function() {
-		$('#optometrist_list').removeClass('display');
-		$('#shop_list').addClass('display');
-	})
-	$('.shop').click(function() {
-		$('#optometrist_list').addClass('display');
-		$('#shop_list').removeClass('display');
-	})
-</script>
-
+						</li>						
+		            </ul>		            
+		        </div>
+		        <div class="con" id="container">
+		        	<!--切换按钮-->
+					<ul class="content_top" id="aBtn">
+						<li class="active" style="text-align: left;text-indent: 0.24rem;">详细介绍</li>						
+					</ul>
+					<text class="showbox" id="shopdel">
+						<h4>资质认证</h4>
+						<img src="" alt="资格证书" class="book"/>
+						<h4>个人介绍</h4>
+						<p class="begoodat"></p>
+						<h4>特长介绍</h4>
+						<p class="createby"></p>
+					</text>
+					<!--<text id="evaluation" style="padding:0 0.24rem;display:block;">
+						<ul class="evalist">							
+							<li>
+								<span class="title">
+									<img src="../images/touxiang.png">
+									<h4>验光师达令~</h4>
+									<span class="star">
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+									</span>
+									<i>&nbsp;2018-10-11</i>
+								</span>
+								<p class="estimate">楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！</p>
+							</li>
+						</ul> 
+					</text>-->
+		        </div>
+		    <!--</div>-->
+		    <!--<div class="bottom">
+				<div id="addCar" class="btn fl">写评价</div>				
+				<div id="payNow" class="btn fr">立即咨询</div>
+			</div>-->
+		    <div id="allmap"></div>
+		</div>	
+		
+		<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>		
+		<script type="text/javascript" src="../js/common/common.js" ></script>
+		<script type="text/javascript" src="../js/common/layer.js" ></script>
+		<script type="text/javascript" src="../js/alljs/optometrist_info.js" ></script>
+		<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nlqmwS4x5dr1H1Q1wnHfiQ6BSOHZU3j6"></script>-->
+		<!--<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>-->	
+		<script>
+//			var abtn = document.getElementById('aBtn');
+//			var aLi = abtn.getElementsByTagName('li');
+//			var content = document.getElementById('container');
+//			var aDiv = content.getElementsByTagName('text');
+//			for(var i = 0; i < aLi.length; i++) {
+//				aLi[i].index = i;
+//				aLi[i].onclick = function() {
+//					for(var i = 0; i < aLi.length; i++) {
+//						aLi[i].className = '';
+//						aDiv[i].className = '';
+//					}
+//					this.className = 'active';
+//					aDiv[this.index].className = 'showbox';
+//				}
+//			}	
+		</script>
+	</body>
 </html>

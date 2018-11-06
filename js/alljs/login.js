@@ -43,8 +43,8 @@ $(function () {
 								case '1':
 									location.href = './shop_info.html';
 									break;
-								case '2':
-									location.href = './optometrist_list.html';
+								case '3':
+									location.href = './optometrist_info.html';
 									break;
 									// case 3: location.href = './shop_info.html'; break;		// 用户端
 							}

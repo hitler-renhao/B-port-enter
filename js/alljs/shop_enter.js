@@ -116,15 +116,6 @@ $(function () {
 				}
 
 			}
-
-
-
-
-
-
-
-
-
 		})
 
 		function cityChoice() {

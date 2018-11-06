@@ -8,6 +8,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="stylesheet" href="../css/common/common.css" />
 		<link rel="stylesheet" href="../css/common/header.css" />
+		<link rel="stylesheet" href="../css/common/layer.css" />
 		<link rel="stylesheet" href="../css/optometrist_evaluation.css" />
 		<script type="text/javascript" src="../js/common/common.js"></script>
 
@@ -27,57 +28,20 @@
 				<ul class="content">					
 					<li>
 						<label><i>*</i>个人介绍:</label>
-						<textarea rows="5" placeholder="您可以详细的点评您的体验及建议"></textarea>
+						<textarea rows="5" placeholder="您可以详细的点评您的体验及建议" id="introduction"></textarea>
 					</li>
 					<li>
 						<label><i>*</i>特长说明:</label>
-						<textarea rows="5" placeholder="您可以详细的点评您的体验及建议"></textarea>
+						<textarea rows="5" placeholder="您可以详细的点评您的体验及建议" id="specialty"></textarea>
 					</li>
 				</ul>
-				<button class="submit">提交</button>
+				<a href="javascript:;" class="submit">提交</a>
 			</form>
 		</div>
 		<script src="../js/common/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript">
-			var rating = (function() {
-				var lightOn = function($item, num) {
-					$item.each(function(index) {
-						if(index < num) {
-							$(this).css('background-position', '0 -0.52rem');
-						} else {
-							$(this).css('background-position', '0 0');
-						}
-					});
-				};
-				var init = function(el, num) {
-					var $rating = $(el);
-					var $item = $rating.find('.rating-item');
-					lightOn($item, num);
-					$rating.on('mouseover', '.rating-item', function() {
-						lightOn($item, $(this).index() + 1);
-					}).on('click', '.rating-item', function() {
-						num = $(this).index() + 1;
-					}).on('mouseout', function() {
-						lightOn($item, num);
-					});
-				};
-				//变成jquery
-				$.fn.extend({
-					rating: function(num) {
-						return this.each(function() {
-							init(this, num);
-						});
-					}
-				});
-				return {
-					init: init
-				};
-			})();
-			rating.init('#rating1', 0);
-			//rating.init('#rating2', 3);
-			//jquery的调用形式
-			$('#rating2').rating(0);
-		</script>
+		<script type="text/javascript" src="../js/common/common.js" ></script>
+		<script type="text/javascript" src="../js/common/layer.js" ></script>
+		<script type="text/javascript" src="../js/alljs/improve_optometrist.js" ></script>
 
 	</body>
 

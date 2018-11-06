@@ -29,7 +29,7 @@
 			<input type="password" placeholder="请再次输入登录密码" id="yzm">
 			<p class="info">已阅读并同意<a href="javascript:;">《用户服务协议》</a></p>
 			<li class="btn">
-				<p>登录</p>
+				<p>注册</p>
 			</li>
 		</form>
 	</div>
@@ -59,7 +59,7 @@
 			}
 			$.ajax({
 					type: "post",
-					url: jianjian + "/login/publicRegister",
+					url: global + "/login/publicRegister",
 					data: {
 						"iphone": $optistmobile,
 						"password": $password,
@@ -74,7 +74,7 @@
 							layer.msg('注册成功！');
 							switch(typeId) {
 								case '1': location.href = './shop_info.html'; break;
-								case '2': location.href = './optometrist_list.html'; break;
+								case '3': location.href = './optometrist_info.html'; break;
 								// case 3: location.href = './shop_info.html'; break;		// 用户端
 							}
 							
