@@ -3,7 +3,7 @@ $(function(){
 //	var typeId = getCookie("typeId");  
 //	if(typeId == "" || typeId == null){
 //      layer.alert('您还未登录，请先登录',function(){
-//          window.location.href= '../html/login.html';
+//          window.location.href= 'http://wx.bjysjglasses.com/ek/html/login.html';
 //      })
 //  }
 	

@@ -1,63 +1,39 @@
 $(function () {
-
-  // 创建地图实例
-  var gpsmarkers = [];
-  var markers = [];
-  var pointArr = [];
-  var pt = null;
-  // var longitude = 0;
-  // var latitude = 0;
-
-  navigator.geolocation.getCurrentPosition(geo_success, geo_error, {
-    // 指示浏览器获取高精度的位置，默认为false
-    enableHighAcuracy: true,
-    // 指定获取地理位置的超时时间，默认不限时，单位为毫秒
-    timeout: 5000,
-    // 最长有效期，在重复获取地理位置时，此参数指定多久再次获取位置。
-    maximumAge: 1000
-  });
-
-  function geo_success(position) {
-    pt = new BMap.Point(position.coords.longitude, position.coords.latitude);
-    var convertor = new BMap.Convertor();
-    pointArr.push(pt);
-    convertor.translate(pointArr, 1, 5, translateCallback);
-  }
-
-  function geo_error(msg) {
-    console.log(msg.code, msg.message);
-    alert(定位失败, 请打开手机GPS);
-  }
-  //坐标转换完之后的回调函数
-  translateCallback = function (data) {
-    if (data.status === 0) {
-      alert("经度:" + data.points[0].lng); //输出百度坐标的经度
-      alert("纬度:" + data.points[0].lat); //输出百度坐标的纬度
-      // getShop(data.points[0].lng, ldata.points[0].lat);
-    }
-  }
-
-  // function getShop(longitude, latitude) {
+  var tokenKey = localStorage.getItem('tokenKey3');
+  var typeId = localStorage.getItem('typeId');
+  console.log(tokenKey);
+  console.log(typeId);
+  $('#search_btn').click(function () {
+    var shopname = $('#search_shop').val();
     $.ajax({
-      type: 'post',
-      url: global + "/shop/queryList",
+      type: 'get',
+      url: global + "/shop/searchShop",
       async: true,
       data: {
-        'pageNum': 1,
-        'pageSize': 10000,
-        'longitude': longitude,
-        'latitude': latitude
+        'shopname': shopname,
+        'tokenKey': tokenKey,
+        'typeId': typeId
       },
       success: function (data) {
+        console.log(data);
         var res = data.data;
-        console.log(res.result);
+        $('html').on('click', '#popular li', function () {
+          $(this).addClass('mark');
+          var name = $('.mark .name').text();
+          var id = $('.mark').attr('data-id');
+          location.href = '../html/improve_optometrist.html';
+          setCookie('shopName', name, 30);
+          setCookie('id', id, 30);
+        })
+
+
         var itemIndex = 0;
         var count = 0;
         var tabLoadEndArray = [false, false, false];
-        var tabLenghtArray = [res.result.length]; // 数据总条数
+        var tabLenghtArray = [res.length]; // 数据总条数
         var tabScroolTopArray = [0, 0, 0];
 
-        // dropload
+        dropload
         var dropload = $('.khfxWarp').dropload({
           scrollArea: window,
           domDown: {
@@ -87,18 +63,18 @@ $(function () {
                   break;
                 }
 
-                if ('' == res.result[count].imgurl || null == res.result[count].imgurl) {
+                if ('' == res[count].imgurl || null == res[count].imgurl) {
                   // console.log(111);
-                  res.result[count].imgurl = 'http://wx.bjysjglasses.com/ek/upload/shop/2018-11-06_11-42-56_15414757761266853.png'
+                  res[count].imgurl = 'http://wx.bjysjglasses.com/ek/upload/shop/2018-11-06_11-42-56_15414757761266853.png'
                 }
 
                 result
                   += '' +
-                  '<li>' +
-                  '<img src="' + res.result[count].imgurl + '" class="user" />' +
+                  '<li data-id="' + res[count].id + '">' +
+                  '<img src="' + res[count].imgurl + '" class="user" />' +
                   '<span class="opbox">' +
                   '<span class="namebox">' +
-                  '<p class="name">' + res.result[count].shopname + '</p>' +
+                  '<p class="name">' + res[count].shopname + '</p>' +
                   '<i>已服务' + 1421 + '人</i>' +
                   '</span>' +
                   '<span class="namebox">' +
@@ -110,9 +86,9 @@ $(function () {
                   '<i></i>' +
                   '</span>' +
                   '</span>' +
-                  '<p class="evaluate">营业时间：' + res.result[count].businessHours + '</p>' +
+                  '<p class="evaluate">营业时间：' + res[count].businessHours + '</p>' +
                   '<span class="renz">' +
-                  '<p>' + res.result[count].addresInfo + res.result[count].addres + '</p>' +
+                  '<p>' + res[count].addresInfo + res[count].addres + '</p>' +
                   '<p>' + '1.02km' + '</p>' +
                   '</span>' +
                   '</span>' +
@@ -121,10 +97,6 @@ $(function () {
               $('.khfxPane').eq(itemIndex).append(result);
               me.resetload();
             }, 500);
-
-
-
-
             $('.tabHead span').on('click', function () {
 
               tabScroolTopArray[itemIndex] = $(window).scrollTop();
@@ -150,10 +122,5 @@ $(function () {
 
       }
     });
-  // }
-
-
-
-
-
+  })
 })

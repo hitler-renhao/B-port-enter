@@ -46,10 +46,15 @@ $(function () {
 						if (data.code == 200) {
 							layer.msg('注册成功！');
 							localStorage.setItem('usertel', $optistmobile);
-							localStorage.setItem('tokenKey', res.tokenKey);
-							switch(typeId) {
-								case '1': location.href = "./shop_enter.html";break;
-								case '3': location.href = "./optometrist_enter.html";break;
+							switch (typeId) {
+								case '1':
+									localStorage.setItem('tokenKey1', res.tokenKey);
+									location.href = "../html/shop_enter.html";
+									break;
+								case '3':
+									localStorage.setItem('tokenKey3', res.tokenKey);
+									location.href = "../html/optometrist_enter.html";
+									break;
 							}
 						} else {
 							layer.alert("此号码已经注册,请直接登录！", function () {

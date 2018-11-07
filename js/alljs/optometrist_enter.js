@@ -1,5 +1,7 @@
 $(function() {
 	// var openId = jQuery.cookie('OPENIDCOOKIENAME');
+	var tokenKey = localStorage.getItem('tokenKey3');
+	var typeId = localStorage.getItem('typeId');
 
 	layui.use('upload', function() {
 		var $ = layui.jquery,
@@ -15,6 +17,10 @@ $(function() {
 		upload.render({
 			elem: '#test1',
 			url: lala + '/shop/uploadImg',
+			data: {
+				"tokenKey": tokenKey,
+				'typeId': typeId,
+			},
 			before: function(obj) {
 				$('#headurl').removeClass('display')
 				//预读本地文件示例，不支持ie8
@@ -34,6 +40,10 @@ $(function() {
 		upload.render({
 			elem: '#faces',
 			url: lala + '/shop/uploadImg',
+			data: {
+				"tokenKey": tokenKey,
+				'typeId': typeId
+			},
 			before: function(obj) {
 				$('#idcard').removeClass('display')
 				//预读本地文件示例，不支持ie8
@@ -53,6 +63,10 @@ $(function() {
 		upload.render({
 			elem: '#back',
 			url: lala + '/shop/uploadImg',
+			data: {
+				"tokenKey": tokenKey,
+				'typeId': typeId
+			},
 			before: function(obj) {
 				$('#backcard').removeClass('display')
 				//预读本地文件示例，不支持ie8
@@ -72,6 +86,10 @@ $(function() {
 		upload.render({
 			elem: '#zige',
 			url: lala + '/shop/uploadImg',
+			data: {
+				"tokenKey": tokenKey,
+				'typeId': typeId
+			},
 			before: function(obj) {
 				$('.layui-upload-list').removeClass('display')
 				//预读本地文件示例，不支持ie8

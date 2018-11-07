@@ -1,5 +1,9 @@
 $(function () {
-	var typeId = localStorage.getItem('typeId');
+	// var typeId = localStorage.getItem('typeId');
+	var typeId = localStorage.getItem("typeId"); //用户类型判断
+
+	
+	var openId = localStorage.getItem("openId"); // 判断店铺
 	var login = {
 		init: function () {
 			this.loginData();
@@ -35,16 +39,15 @@ $(function () {
 							layer.msg('登录成功！');
 							var res = data.data;
 							localStorage.setItem('userId', res.id);
-							localStorage.setItem('tokenKey', res.tokenKey);
 							localStorage.setItem('shopId', res.shopId);
-							console.log(typeId);
-							
 							switch (typeId) {
 								case '1':
-									location.href = './shop_info.html';
+									localStorage.setItem('tokenKey1', res.tokenKey);
+									location.href = './shop_info.html?typeid=' + typeId + '&openid' + openId;
 									break;
 								case '3':
-									location.href = './optometrist_info.html';
+									localStorage.setItem('tokenKey3', res.tokenKey);
+									location.href = './optometrist_info.html?typeid=' + typeId + '&openid' + openId;
 									break;
 									// case 3: location.href = './shop_info.html'; break;		// 用户端
 							}

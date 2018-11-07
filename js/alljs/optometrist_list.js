@@ -49,7 +49,7 @@ $(function() {
 							}
 
 							result += '<li id="' +res[num].id + '">' +
-								'<img src="../images/touxiang.png" class="user" />' +
+								'<img src="http://wx.bjysjglasses.com/ek/images/touxiang.png" class="user" />' +
 								'<span class="opboxa">' +
 								'<span class="namebox">' +
 								'<p class="name">'+ res[num].name +'</p>' +

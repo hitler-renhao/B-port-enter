@@ -8,9 +8,33 @@ $(function () {
 	var idcardurl = localStorage.getItem('idcardurl');
 	var idcarbackdurl = localStorage.getItem('idcarbackdurl');
 	var idbookurl = localStorage.getItem('idbookurl');
+	var typeId = localStorage.getItem('typeId');
+	var openId = localStorage.getItem('openId');
+	var tokenKey = localStorage.getItem('tokenKey3');
+
+	var shopName = '';
+	var id = '';
+	shopName = getCookie('shopName');
+	id = getCookie('id');
+	console.log(id);
+	
+	if (!shopName) {
+		$('#bindingshop').val('请选择要绑定的店铺')
+	} else {
+		$('#bindingshop').val(shopName)
+	}
+
+
 	var improve = {
 		init: function () {
 			this.improveOp();
+			this.bindingShop();
+		},
+		// 绑定店铺
+		bindingShop: function () {
+			$('#bindingshop').click(function () {
+				location.href = '../html/choice_shop.html';
+			})
 		},
 		improveOp: function () {
 			$('.submit').click(function () {
@@ -35,13 +59,17 @@ $(function () {
 							"certificateImage": idbookurl, //验光师资格证书
 							"introduction": introduction,
 							"specialty": specialty,
+							'shopId': id,
+							'tokenKey': tokenKey,
+							'typeId': typeId
 						},
 						success: function (data) {
 							if (data.code == 200) {
 								console.log(data);
-								
+
 								layer.msg('入驻成功', function () {
-									location.href = './optometrist_info.html';
+									// location.href = '../html/optometrist_info.html';
+									location.href = '../html/optometrist_info.html?typeid=' + typeId + '&openid' + openId;
 								});
 							}
 						}
